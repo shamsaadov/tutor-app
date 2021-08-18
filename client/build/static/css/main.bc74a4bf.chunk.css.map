@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/styles.css"],"names":[],"mappings":"AAAA,KACE,gCAAkC,CAClC,oEACF","file":"main.bc74a4bf.chunk.css","sourcesContent":["body {\r\n  font-family: 'Bebas Neue', cursive;\r\n  background: linear-gradient(180deg,#e7f9fe,rgba(231,249,254,0)250px);\r\n}\r\n\r\n/*font-family: 'Amatic SC', cursive;*/\r\n/*font-family: 'Bebas Neue', cursive;*/"]}
