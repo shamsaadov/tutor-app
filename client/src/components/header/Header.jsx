@@ -13,7 +13,7 @@ function Header() {
     <Box className={classes.header}>
       <Grid container spacing={3}>
         <Grid item xs={9}>
-          <Typography>TutorApp</Typography>
+          <Typography>PLUTOR</Typography>
         </Grid>
         <Grid item>
           <Typography>Login as mentor</Typography>

@@ -117,7 +117,7 @@ export const fetchUpdateUser = (data) => {
     dispatch({ type: "user/update/pending" });
 
     try {
-      const response = await fetch(`/user/${data.id}`, {
+      const response = await fetch(`/api/user/${data.id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",
@@ -143,7 +143,7 @@ export const fetchUpdateMentor = (data) => {
   return async (dispatch) => {
     dispatch({ type: "mentor/update/pending" });
     try {
-      const response = await fetch(`/mentor/${data.id}/update`, {
+      const response = await fetch(`/api/mentor/${data.id}/update`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",
@@ -169,7 +169,7 @@ export const fetchLoginMentor = (data) => {
   return async (dispatch) => {
     dispatch({ type: "mentor/login/pending" });
 
-    const response = await fetch("/mentor/login", {
+    const response = await fetch("/api/mentor/login", {
       method: "POST",
       body: JSON.stringify({
         login: data.login,
@@ -194,7 +194,7 @@ export const fetchLoginUser = (data) => {
   return async (dispatch) => {
     dispatch({ type: "user/login/pending" });
 
-    const response = await fetch("/user/login", {
+    const response = await fetch("/api/user/login", {
       method: "POST",
       body: JSON.stringify({
         login: data.login,
@@ -232,7 +232,7 @@ export const uploadAvatar = (file) => {
     try {
       const formData = new FormData();
       formData.append("file", file);
-      const response = await fetch(`/mentor/avatar`, {
+      const response = await fetch(`/api/mentor/avatar`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${state.application.token}`,
