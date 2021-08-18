@@ -167,7 +167,7 @@ export const fetchRandomMentor = () => {
   return async (dispatch) => {
     dispatch({ type: "mentor/fetch/pending" });
     try {
-      const response = await fetch("/mentors");
+      const response = await fetch("api/mentors");
       const json = await response.json();
       dispatch({ type: "mentor/fetch/fulfilled", payload: json });
     } catch (e) {
