@@ -118,31 +118,6 @@ const mentor = (state = initialState, action) => {
         candidate: state.candidate._id,
       };
 
-    // case "mentor/update/pending":
-    //   return {
-    //     ...state,
-    //     editing: true,
-    //   };
-    // case "mentor/update/fulfilled":
-    //   return {
-    //     ...state,
-    //     editing: false,
-    //     items: state.items.map((item) => {
-    //       if (item._id === action.payload.id) {
-    //         return {
-    //           ...item,
-    //           ...action.payload.data,
-    //         };
-    //       }
-    //       return item;
-    //     }),
-    //   };
-    // case "mentor/update/rejected":
-    //   return {
-    //     ...state,
-    //     error: action.error,
-    //   };
-
     default:
       return state;
   }
@@ -167,7 +142,7 @@ export const fetchRandomMentor = () => {
   return async (dispatch) => {
     dispatch({ type: "mentor/fetch/pending" });
     try {
-      const response = await fetch("api/mentors");
+      const response = await fetch("/mentors");
       const json = await response.json();
       dispatch({ type: "mentor/fetch/fulfilled", payload: json });
     } catch (e) {

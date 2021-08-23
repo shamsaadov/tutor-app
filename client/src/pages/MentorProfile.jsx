@@ -68,7 +68,7 @@ function MentorProfile() {
   const loading = useSelector((state) => state.mentor.loading);
   const candidate = useSelector((state) => state.application.candidate);
 
-  const bought = mentor.students?.find((stud) => stud.userId === candidate._id);
+  const bought = mentor.students.find((stud) => stud.userId === candidate._id);
 
   const handleBuyMentor = () => {
     if (candidate.balance < mentor.payment) {
