@@ -63,7 +63,7 @@ export default user;
 export const fetchRegisterUsers = (data) => {
   return async (dispatch) => {
     dispatch({ type: "user/register/pending" });
-    const response = await fetch("/api/user/register", {
+    const response = await fetch("/user/register", {
       method: "POST",
       body: JSON.stringify({
         name: data.name,
@@ -90,7 +90,7 @@ export const addUserToMentor = (mentorId, userId) => {
   return async (dispatch) => {
     dispatch({ type: "buy/access/fetch/pending" });
     try {
-      const response = await fetch(`/api/${mentorId}/add/${userId}`, {
+      const response = await fetch(`/${mentorId}/add/${userId}`, {
         method: "POST",
         headers: {
           "Content-type": "application/json; charset=utf-8",

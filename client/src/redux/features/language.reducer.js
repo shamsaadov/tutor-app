@@ -39,7 +39,7 @@ export const fetchAllLanguage = () => {
     dispatch({ type: "load/languages/pending" });
 
     try {
-      const response = await fetch("/api/language");
+      const response = await fetch("/language");
       const json = await response.json();
 
       dispatch({ type: "load/languages/fulfilled", payload: json });

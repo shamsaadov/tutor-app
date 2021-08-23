@@ -153,7 +153,7 @@ export const deleteAccount = (id) => {
   return async (dispatch) => {
     dispatch({ type: "account/delete/fetch/pending" });
     try {
-      await fetch(`/api/mentor/${id}/delete`, {
+      await fetch(`/mentor/${id}/delete`, {
         method: "DELETE",
       });
       dispatch({ type: "account/delete/fetch/fulfilled", payload: id });
@@ -167,7 +167,7 @@ export const fetchRandomMentor = () => {
   return async (dispatch) => {
     dispatch({ type: "mentor/fetch/pending" });
     try {
-      const response = await fetch("/api/mentors");
+      const response = await fetch("api/mentors");
       const json = await response.json();
       dispatch({ type: "mentor/fetch/fulfilled", payload: json });
     } catch (e) {
@@ -180,7 +180,7 @@ export const fetchAllMentor = () => {
   return async (dispatch) => {
     dispatch({ type: "all/mentor/fetch/pending" });
     try {
-      const response = await fetch("/api/mentor/page");
+      const response = await fetch("/mentor/page");
       const json = await response.json();
       dispatch({ type: "all/mentor/fetch/fulfilled", payload: json });
     } catch (e) {
@@ -193,7 +193,7 @@ export const fetchMentorByLanguageId = (id) => {
   return async (dispatch) => {
     dispatch({ type: "mentor/language/fetch/pending" });
     try {
-      const response = await fetch(`/api/mentor/${id}/language`);
+      const response = await fetch(`/mentor/${id}/language`);
       const json = await response.json();
       dispatch({ type: "mentor/language/fetch/fulfilled", payload: json });
     } catch (e) {
@@ -206,7 +206,7 @@ export const fetchRegisterMentor = (data) => {
   return async (dispatch) => {
     dispatch({ type: "mentor/register/pending" });
 
-    const response = await fetch("/api/mentor/register", {
+    const response = await fetch("/mentor/register", {
       method: "POST",
       body: JSON.stringify({
         name: data.name,
@@ -237,9 +237,8 @@ export const fetchMentorProfile = (id) => {
   return async (dispatch) => {
     dispatch({ type: "mentor/profile/fetch/pending" });
     try {
-      const response = await fetch(`/api/mentor/${id}/profile`);
+      const response = await fetch(`/mentor/${id}/profile`);
       const json = await response.json();
-
       dispatch({ type: "mentor/profile/fetch/fulfilled", payload: json });
     } catch (e) {
       dispatch({ type: "mentor/profile/fetch/rejected", error: e.message });

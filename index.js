@@ -15,12 +15,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(file());
 app.use(express.static(path.resolve(__dirname, "public")));
-app.use(express.static(path.resolve(__dirname, "client", 'build')));
-app.get('*', ((req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-}))
+app.use(express.static(path.resolve(__dirname, "client", "build")));
 app.use(morgan("dev"));
 app.use(indexRoutes);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 const connectDBandLocalServer = async () => {
   try {
