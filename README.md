@@ -20,3 +20,19 @@
     <li><h5>Показ менторов определенных языков</h5></li>
 </ul>
 <hr/>
+
+#### Home page
+<img src="client/src/assets/tutor-home-page.PNG">
+<hr/>
+
+#### Tutors by language page
+<img src="client/src/assets/tutors-by-lang.PNG">
+<hr/>
+
+#### Tutor profile
+<img src="client/src/assets/profile-page.PNG">
+<hr/>
+
+#### Private page
+<img src="client/src/assets/private-room.PNG">
+<hr/>
